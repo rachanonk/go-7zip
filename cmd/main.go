@@ -12,13 +12,18 @@ import (
 )
 
 func main() {
+	//sample zip generation
 	fmt.Println("# Setup")
 	zip.CheckFor7Zip()
-	fmt.Println("# Answer to question...")
+	zip.SetupDir()
+	zip.CreateSampleFile()
+	zip.CreateZipWithPassword()
+
+	//zip extraction
 	zip.ExtractZipWithPassword()
 	zip.SetupZipDir()
 	zip.ConvertContent()
 	zip.ReCreateZipWithPassword()
-	zip.VerifyZip()
+	// zip.VerifyZip()
 	fmt.Println("Done.")
 }

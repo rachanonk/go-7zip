@@ -61,7 +61,7 @@ func ConvertContent() {
 }
 func ReCreateZipWithPassword() {
 	fmt.Println("Creating", dst_zip_path)
-	commandString := fmt.Sprintf(`7za a %s %s -p"%s" -mem=%s`, dst_zip_path, dst_txt_path, zip_password, zip_encryptType)
+	commandString := fmt.Sprintf(`7za a %s %s -p%s -mem=%s`, dst_zip_path, dst_txt_path, zip_password, zip_encryptType)
 	commandSlice := strings.Fields(commandString)
 	fmt.Println(commandString)
 	c := exec.Command(commandSlice[0], commandSlice[1:]...)
@@ -91,7 +91,7 @@ func CreateSampleFile() {
 }
 func CreateZipWithPassword() {
 	fmt.Println("Creating", sameple_zip_path)
-	commandString := fmt.Sprintf(`7za a %s %s -p"%s" -mem=%s`, sameple_zip_path, sameple_txt_path, zip_password, zip_encryptType)
+	commandString := fmt.Sprintf(`7za a %s %s -p%s -mem=%s`, sameple_zip_path, sameple_txt_path, zip_password, zip_encryptType)
 	commandSlice := strings.Fields(commandString)
 	fmt.Println(commandString)
 	c := exec.Command(commandSlice[0], commandSlice[1:]...)
@@ -100,7 +100,7 @@ func CreateZipWithPassword() {
 }
 func ExtractZipWithPassword() {
 	fmt.Printf("Unzipping `%s` to directory `%s`\n", sameple_zip_path, extract_path)
-	commandString := fmt.Sprintf(`7za e %s -o%s -p"%s" -aoa`, sameple_zip_path, extract_path, zip_password)
+	commandString := fmt.Sprintf(`7za e %s -o%s -p%s -aoa`, sameple_zip_path, extract_path, zip_password)
 	commandSlice := strings.Fields(commandString)
 	fmt.Println(commandString)
 	c := exec.Command(commandSlice[0], commandSlice[1:]...)
@@ -117,7 +117,7 @@ func CheckFor7Zip() {
 
 func VerifyZip() {
 	fmt.Printf("Unzipping `%s` to directory `%s`\n", dst_zip_path, extract_path)
-	commandString := fmt.Sprintf(`7za e %s -o%s -p"%s" -aoa`, dst_zip_path, extract_path, zip_password)
+	commandString := fmt.Sprintf(`7za e %s -o%s -p%s -aoa`, dst_zip_path, extract_path, zip_password)
 	commandSlice := strings.Fields(commandString)
 	fmt.Println(commandString)
 	c := exec.Command(commandSlice[0], commandSlice[1:]...)
