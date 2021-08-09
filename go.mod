@@ -1,3 +1,3 @@
-module github.com/rachanonk/go-zip
+module github.com/rachanonk/go-7zip
 
 go 1.16

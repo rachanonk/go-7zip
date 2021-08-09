@@ -14,11 +14,8 @@ import (
 func main() {
 	fmt.Println("# Setup")
 	zip.CheckFor7Zip()
-	fmt.Println("# Answer to question...")
-	zip.ExtractZipWithPassword()
-	zip.SetupZipDir()
-	zip.ConvertContent()
-	zip.ReCreateZipWithPassword()
-	zip.VerifyZip()
+	zip.SetupDir()
+	zip.CreateSampleFile()
+	zip.CreateZipWithPassword()
 	fmt.Println("Done.")
 }
